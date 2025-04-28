@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternaa - Efficienza Idrica per l'Hotellerie</title>
+    <style>
+        :root {
+            --primary-color: #28596B;
+            --secondary-color: #5A94AD;
+            --light-bg: #E2E8ED;
+            --dark-bg: #203D49;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            text-align: center;
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .stars {
+            font-size: 24px;
+            color: #FFD700;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: right;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-text {
+            font-size: 16px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .services-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .services-text {
+            flex: 1;
+        }
+        
+        .services-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .services-text p {
+            margin-bottom: 20px;
+        }
+        
+        .services-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .services-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .services-stats {
+            position: absolute;
+            bottom: 50px;
+            left: 20px;
+            right: 20px;
+            background-color: rgba(40, 89, 107, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            color: var(--light-text);
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .service-stat {
+            text-align: center;
+        }
+        
+        .service-stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .services-content {
+                flex-direction: column;
+            }
+            
+            .stats {
+                margin-top: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 12C32.3 12 18 26.3 18 44C18 61.7 50 88 50 88C50 88 82 61.7 82 44C82 26.3 67.7 12 50 12ZM50 54C44.5 54 40 49.5 40 44C40 38.5 44.5 34 50 34C55.5 34 60 38.5 60 44C60 49.5 55.5 54 50 54Z" fill="#28596B"/>
+                        <path d="M40 44C40 49.5 44.5 54 50 54C55.5 54 60 49.5 60 44C60 38.5 55.5 34 50 34C44.5 34 40 38.5 40 44Z" fill="#5A94AD"/>
+                    </svg>
+                    <h1>Eternaa</h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Chi Siamo</a></li>
+                    <li><a href="#">Servizi</a></li>
+                    <li><a href="#">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>L'acqua è il nostro bene più prezioso. Proteggiamola insieme</h2>
+                <p>Ogni goccia conta: Risparmia acqua, risparmia denaro.</p>
+                <a href="#" class="btn">Scopri di più</a>
+                <div class="stars">★★★★★</div>
+                <p>EFFICIENZA, SOSTENIBILITÀ E INNOVAZIONE AL SERVIZIO DELL'HOTELLERIE</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Perchè Eternaa?</h2>
+                    <p>L'acqua è la risorsa più preziosa che abbiamo: è limitata, non riproducibile e sempre più a rischio.</p>
+                    <p>Nei prossimi anni il suo costo aumenterà e le normative imporranno un uso sempre più consapevole. Agire oggi significa prevenire crisi domani. Eternaa guida le strutture alberghiere verso scelte responsabili, efficienti e sostenibili, per tutelare il futuro del settore.</p>
+                    <a href="#" class="btn">Chi siamo</a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-text">Domanda idrica oltre l'offerta entro il 2030</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+25%</div>
+                        <div class="stat-text">Aumento del costo dell'acqua negli ultimi 10 anni</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">400 litri</div>
+                        <div class="stat-text">Consumo giornaliero per ospite in hotel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-content">
+                <div class="services-text">
+                    <h2>Un unico partner, un servizio completo</h2>
+                    <p>Eternaa è una società specializzata nell'efficientamento idrico delle strutture alberghiere.</p>
+                    <p>Offriamo un servizio integrato: dall'analisi dei consumi alla ristrutturazione degli impianti, fino al monitoraggio continuo. Riduciamo gli sprechi, valorizziamo l'acqua, generiamo risparmi.</p>
+                    <a href="#" class="btn">Contattaci</a>
+                </div>
+                <div class="services-image">
+                    <img src="https://images.pexels.com/photos/62307/air-bubbles-diving-underwater-blow-62307.jpeg" alt="Hotel con palme e piscina">
+                    <div class="services-stats">
+                        <div class="service-stat">
+                            <div class="service-stat-number">40%+</div>
+                            <div class="service-stat-text">Riduzione media dei consumi</div>
+                        </div>
+                        <div class="service-stat">
+                            <div class="service-stat-number">25+</div>
+                            <div class="service-stat-text">Partner commerciali</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Eternaa</h3>
+                    <p>Eternaa è la soluzione ideale per l'efficienza idrica nelle strutture alberghiere. Aiutiamo gli hotel a risparmiare acqua, ridurre i costi e a diventare più sostenibili.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>CONTATTI</h3>
+                    <div class="contact-info">
+                        <p>Email: info@eternaa.eu</p>
+                        <p>Tel. +39 327 0950809</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>RICHIEDI UN APPUNTAMENTO</h3>
+                    <div class="form-group">
+                        <input type="email" placeholder="Esempio: info@eternaa.eu">
+                    </div>
+                    <a href="#" class="btn">Invia la mia richiesta</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Eternaa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
